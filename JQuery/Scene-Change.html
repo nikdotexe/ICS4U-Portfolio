@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Project: Scene change</title>
+        <style>
+        #leafers {
+            position: absolute;
+            top: 210px;
+            left: 378px;
+        }
+        #fe{background-color:darkgreen;}
+            
+        </style>
+    </head>
+    <body>
+<p id="go">This leafer is not in its natural habitat. To see a leafer in its natural habitat, click on the mountain.</p>
+<p id="ef">This is also a young leafer. To see a big boi leafer, click on the leafer.</p>
+
+    <img src="https://www.kasandbox.org/programming-images/landscapes/mountain_matterhorn.png" id="backg">
+
+    <img src="https://www.kasandbox.org/programming-images/avatars/leafers-seedling.png" id="leafers">
+    <p id="fe">Curious how this works? Open the console and click on something!</p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+    var q=function(){$("#backg").attr("src","https://www.kasandbox.org/programming-images/landscapes/lotus-garden.png")
+    .css("width",800+"px");
+    $("#go").text("You can now see a leafer in its natural habitat of a lily garden.")
+        
+    };
+    var w=function(){
+        $("#leafers").attr("src","https://www.kasandbox.org/programming-images/avatars/leafers-ultimate.png");
+        $("#ef").text("This is a fully grown, or ultimate leafer.")
+    }
+    var e=function(){$("#fe").text("Good clicking! Do it again!")
+    .css("background-color","rgb(18, 232, 132)")
+    
+    }
+        $("#backg").on("click", function(event) {
+   q();
+   console.log("This is the function q, which changes the src of the background image from https://www.kasandbox.org/programming-images/landscapes/mountain_matterhorn.png to https://www.kasandbox.org/programming-images/landscapes/lotus-garden.png.It also changes the text of the first paragraph."
+   )
+        });
+        $("#leafers").on("click",function(event){
+            w();
+            console.log("This is caused by the function w, which changes the src of the leafer from https://www.kasandbox.org/programming-images/avatars/leafers-seedling.png to https://www.kasandbox.org/programming-images/avatars/leafers-ultimate.png. It also changes the text of the second paragraph.")
+        })
+        $("#fe").on("click",function(event){e();
+            console.log("This is caused by the function e which changes the text of the bottom paragraph. It also changes the background color of the paragraph to rgb(18,232,132), or turquoise.")
+        })
+        
+    </script>
+    </body>
+</html>
